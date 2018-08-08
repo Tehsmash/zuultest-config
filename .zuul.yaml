@@ -1,6 +1,11 @@
 ---
+- job:
+    name: zuultest-job
+    run: playbooks/run.yaml
+
 - project:
     name: Tehsmash/zuultest-config
     check:
       jobs:
         - noop
+        - zuultest-job
